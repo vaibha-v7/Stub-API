@@ -28,13 +28,13 @@ The application is built using modern full-stack web standards:
 * **DevOps**: Docker multi-stage builds and custom shell process supervision.
 
 ```mermaid
-graph TD
+flowchart LR
     Client[Web Browser Client] -->|Port 7890| Express[Express API Server]
     Express -->|Static Files| React[React SPA Frontend]
-    Express -->|Generates Mock Data| Gemini[Google Gemini AI API]
     Express -->|Persists Config & Mock Data| Mongo[Embedded MongoDB Server]
-    
-    subgraph Docker Container
+    Express -->|Generates Mock Data| Gemini[Google Gemini AI API]
+
+    subgraph Docker ["Docker Container"]
         Express
         React
         Mongo
