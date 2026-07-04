@@ -111,7 +111,7 @@ If you want to run the project locally for development purposes, you will need N
    ```
 4. Start the backend:
    ```bash
-   npm run dev
+   nodemon app.js
    ```
 
 ### Step 2: Run the Frontend
